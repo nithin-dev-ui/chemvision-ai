@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050816;
+    overflow:hidden;
+    color:white;
+}
+
+/* Animated Glow */
+.background-glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#00e5ff55,#7c4dff33,transparent);
+    filter:blur(80px);
+    animation:floatGlow 8s ease-in-out infinite;
+}
+
+@keyframes floatGlow{
+    0%{
+        transform:translateY(-20px);
+    }
+    50%{
+        transform:translateY(20px);
+    }
+    100%{
+        transform:translateY(-20px);
+    }
+}
+
+.hero{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:60px;
+    width:80%;
+    max-width:800px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:25px;
+
+    box-shadow:
+    0 0 30px rgba(0,229,255,0.15),
+    0 0 60px rgba(124,77,255,0.10);
+}
+
+.hero h1{
+    font-size:72px;
+    margin-bottom:20px;
+
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #7c4dff,
+        #00e5ff
+    );
+
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove{
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:300%;
+    }
+}
+
+.hero p{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+.launch-btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #00e5ff,
+        #7c4dff
+    );
+
+    color:white;
+    font-size:18px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+}
+
+.launch-btn:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px #00e5ff,
+    0 0 40px #7c4dff;
+}

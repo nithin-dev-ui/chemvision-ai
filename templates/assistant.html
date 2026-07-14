@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemVision AI Assistant</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<style>
+
+.chat-box{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+    margin-top:20px;
+}
+
+.answer-box{
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(124,77,255,.12);
+    white-space:pre-wrap;
+    line-height:1.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="page-title">
+🤖 ChemVision AI Assistant
+</h1>
+
+<div class="container">
+
+```
+<div class="glass-card">
+
+    <h2>Ask Any Chemistry Question</h2>
+
+    <form method="POST">
+
+        <input
+            class="input-box"
+            type="text"
+            name="question"
+            placeholder="Example: Explain Le Chatelier's Principle"
+            required
+        >
+
+        <button class="ai-btn" type="submit">
+            Ask ChemVision AI
+        </button>
+
+    </form>
+
+</div>
+
+{% if answer %}
+
+<div class="answer-box">
+```
+
+{{ answer }}
+
+```
+</div>
+
+{% endif %}
+
+<a href="/dashboard" class="back-link">
+    ← Back to Dashboard
+</a>
+```
+
+</div>
+
+</body>
+</html>

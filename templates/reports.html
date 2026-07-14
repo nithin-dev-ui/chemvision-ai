@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemVision AI Reports</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<style>
+
+.report-box{
+    margin-top:25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    white-space:pre-line;
+    line-height:1.8;
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="page-title">
+📊 ChemVision AI Report Generator
+</h1>
+
+<div class="container">
+
+    <div class="glass-card">
+
+        <h2>Enter Experiment Name</h2>
+
+        <form method="POST">
+
+            <input
+                class="input-box"
+                type="text"
+                name="experiment"
+                placeholder="Example: Neutralization of HCl and NaOH"
+                required
+            >
+
+            <button
+                class="ai-btn"
+                type="submit">
+
+                Generate Report
+
+            </button>
+
+        </form>
+
+    </div>
+
+    {% if report %}
+
+    <div class="report-box">
+
+{{ report }}
+
+    </div>
+
+    {% endif %}
+
+    <a href="/dashboard" class="back-link">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

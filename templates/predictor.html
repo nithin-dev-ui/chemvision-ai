@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemVision AI Predictor</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<style>
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    margin-top:25px;
+    backdrop-filter:blur(20px);
+}
+
+.result-card{
+    margin-top:25px;
+    background:rgba(124,77,255,.12);
+    border-radius:20px;
+    padding:25px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="page-title">
+⚗ ChemVision AI Reaction Predictor
+</h1>
+
+<div class="container">
+
+    <div class="glass-card">
+
+        <h2>Enter Chemical Reaction</h2>
+
+        <form method="POST">
+
+            <input
+                class="input-box"
+                type="text"
+                name="reaction"
+                placeholder="Example: HCl + NaOH"
+                required
+            >
+
+            <button class="ai-btn" type="submit">
+                Predict Reaction
+            </button>
+
+        </form>
+
+    </div>
+
+    {% if result %}
+
+    <div class="result-card">
+
+        <h2>AI Prediction Result</h2>
+
+        <br>
+
+        <div style="white-space: pre-wrap;">
+    {{ result }}
+</div>
+
+    </div>
+
+    {% endif %}
+
+    <a href="/dashboard" class="back-link">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChemVision AI Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+<style>
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    text-align:center;
+    padding:30px;
+    font-size:28px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #7c4dff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.menu{
+    padding:20px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+}
+
+.menu-item{
+    padding:15px;
+    margin-bottom:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.05);
+    transition:.3s;
+}
+
+.menu-item:hover{
+    background:rgba(0,229,255,.15);
+}
+
+.main{
+    margin-left:260px;
+    padding:40px;
+}
+
+.hero-title{
+    font-size:52px;
+    margin-bottom:10px;
+}
+
+.hero-sub{
+    color:#aab4c8;
+    margin-bottom:35px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+}
+
+.stat-number{
+    font-size:38px;
+    font-weight:bold;
+    color:#00e5ff;
+}
+
+.modules{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.module-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.module-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+    0 0 25px rgba(0,229,255,.20);
+}
+
+.module-card h3{
+    margin-bottom:15px;
+}
+
+.module-card p{
+    color:#b7c0d1;
+}
+
+.module-link{
+    text-decoration:none;
+    color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+```
+<div class="logo">
+    ChemVision AI
+</div>
+
+<div class="menu">
+
+    <a href="/assistant">
+        <div class="menu-item">🤖 AI Assistant</div>
+    </a>
+
+    <a href="/predictor">
+        <div class="menu-item">⚗ Reaction Predictor</div>
+    </a>
+
+    <a href="/upload">
+        <div class="menu-item">📷 Upload Analyzer</div>
+    </a>
+
+    <a href="/safety">
+        <div class="menu-item">☣ Safety Checker</div>
+    </a>
+
+    <a href="/reports">
+        <div class="menu-item">📊 Reports</div>
+    </a>
+
+</div>
+```
+
+</div>
+
+<div class="main">
+
+```
+<h1 class="hero-title">
+    Chemistry Intelligence Dashboard
+</h1>
+
+<p class="hero-sub">
+    Multi-Agent Chemistry Research Platform
+</p>
+
+<div class="stats">
+
+    <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div>AI Agents</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">12+</div>
+        <div>Research Modules</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">99%</div>
+        <div>Prediction Accuracy</div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-number">24/7</div>
+        <div>AI Monitoring</div>
+    </div>
+
+</div>
+
+<div class="modules">
+
+    <a class="module-link" href="/assistant">
+        <div class="module-card">
+            <h3>🤖 AI Assistant</h3>
+            <p>Ask chemistry questions and receive intelligent responses.</p>
+        </div>
+    </a>
+
+    <a class="module-link" href="/predictor">
+        <div class="module-card">
+            <h3>⚗ Reaction Predictor</h3>
+            <p>Predict chemical products and reaction types.</p>
+        </div>
+    </a>
+
+    <a class="module-link" href="/upload">
+        <div class="module-card">
+            <h3>📷 Upload Analyzer</h3>
+            <p>Analyze images, reactions and chemistry diagrams.</p>
+        </div>
+    </a>
+
+    <a class="module-link" href="/safety">
+        <div class="module-card">
+            <h3>☣ Safety Checker</h3>
+            <p>Identify hazards, toxicity and precautions.</p>
+        </div>
+    </a>
+
+    <a class="module-link" href="/reports">
+        <div class="module-card">
+            <h3>📊 Research Reports</h3>
+            <p>Generate AI-powered chemistry reports.</p>
+        </div>
+    </a>
+
+</div>
+```
+
+</div>
+
+</body>
+</html>
